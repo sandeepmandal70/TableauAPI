@@ -19,9 +19,9 @@ def getGroupDetails(server):
 
 if __name__ == "__main__":
     print('=======================Create Group==========================')
-    email = input("Enter your Tableau email : ") or "sandeepmandal70@gmail.com"
-    pwd = input("Enter your Tableau Password : ") or "SandeepTableau900#"
-    site = input("Enter your Tableau site : ") or "sandeepalphadev379367"
+    email = input("Enter your Tableau email : ") 
+    pwd = input("Enter your Tableau Password : ") 
+    site = input("Enter your Tableau site : ") 
     group = input("Enter group name : ")
 
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     print("=======================Available Group==========================")
     before_creation = getGroupDetails(server)
-    
+
     createGroup(group,server)
 
     server.auth.sign_out()
