@@ -12,7 +12,7 @@ def createGroup(name_of_group,server):
 
 def getGroupDetails(server):
     all_groups,pagination = server.groups.get() #fecthing all group name from site
-    set_of_group = set(map(lambda group:group.name,all_groups))
+    set_of_group = set(map(lambda group:group.id,all_groups))
     print(set_of_group)
     print("No. of group : ",len(set_of_group))
     return set_of_group
@@ -30,11 +30,14 @@ if __name__ == "__main__":
     print("=======================Available Group==========================")
     before_creation = getGroupDetails(server)
 
+
+
     createGroup(group,server)
 
     server.auth.sign_out()
     server = loginToSite(email,pwd,site)
 
     after_creation = getGroupDetails(server)
+
     print("New Group Created : ",after_creation-before_creation)
 
